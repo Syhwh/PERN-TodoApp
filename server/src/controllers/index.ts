@@ -45,8 +45,8 @@ export const createTask = async (req: Request, res: Response): Promise<Response>
 export const deleteTask = async (req: Request, res: Response): Promise<Response> => {
 	try {
 		const id = parseInt(req.params.id);
-		await pool.query('DELETE FROM todos WHERE id = $1', [id]);
-		return res.send(200).json({ message: 'task deleted successfully' });
+		await pool.query('DELETE FROM todos WHERE todo_id = $1', [id]);
+		return res.json({ message: 'task deleted successfully' });
 	} catch (error) {
 		throw new Error(`deleteTask Error ${error.message}`);
 	}
@@ -56,8 +56,8 @@ export const editTask = async (req: Request, res: Response): Promise<Response> =
 	try {
 		const id = parseInt(req.params.id);
 		const { title, description } = req.body;
-		const response: QueryResult = await pool.query('UPDATE todos SET title = $1, description = $2 WHERE id = $3', [title, description, id]);
-		return res.send(200).json({ message: 'Task updated successfully' })
+		const response: QueryResult = await pool.query('UPDATE todos SET title = $1, description = $2 WHERE todo_id = $3', [title, description, id]);
+		return res.json({ message: 'Task updated successfully' })
 	} catch (error) {
 		throw new Error(`updateTask Error ${error.message}`);
 	}
