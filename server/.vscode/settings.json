@@ -1,5 +1,9 @@
 {
 	"cSpell.words": [
-		"postgrees"
+		"postgres"
+	],
+	"cSpell.ignoreWords": [
+		"todoapp",
+		"todos"
 	]
 }
