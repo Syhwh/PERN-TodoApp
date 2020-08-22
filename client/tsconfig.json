@@ -62,5 +62,18 @@
 
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
-  }
+  },
+  "exclude": [
+    "build",
+    "dist",
+    "node_modules",
+    "__tests__"
+  ],
+  "types": [
+    "node",
+    "webpack",
+    "react",
+    "react-dom",
+    "react-bootstrap"
+  ],
 }
