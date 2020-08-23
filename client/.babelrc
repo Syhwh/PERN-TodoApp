@@ -1,4 +1,18 @@
 {
-	"presets": ["@babel/env", "@babel/preset-react","@babel/typescript"],
-	"plugins": ["react-hot-loader/babel"]
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"node": "12"
+				}
+			}
+		],
+		"@babel/preset-react",
+		"@babel/typescript"
+	],
+	"plugins": [
+		"react-hot-loader/babel",
+		"@babel/plugin-transform-runtime"
+	]
 }
